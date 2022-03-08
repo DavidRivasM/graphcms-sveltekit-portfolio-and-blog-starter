@@ -9,18 +9,15 @@
     fetchSiteMetadata,
     siteMetadataStore,
   } from '$stores/site-metadata'
-
   export const load = async () => {
     await fetchAuthors()
     await fetchSiteMetadata()
-
     const [authorRes, projectsRes] = await Promise.all([
       client.request(authorsQuery),
       client.request(projectsQuery),
     ])
     const { authors } = authorRes
     const { projects } = projectsRes
-
     return {
       props: {
         projects,
@@ -33,7 +30,6 @@
 <script>
   export let projects
   export let authors
-
   const {
     siteUrl,
     name: siteName,
@@ -50,7 +46,7 @@
   url={`${siteUrl}`}
 />
 
-<h1 class="font-bold text-center mb-20 text-5xl">
+<h1 class="font-bold text-center mb-20 text-5xl animate-bounce">
   Welcome to my Portfolio
 </h1>
 
@@ -60,13 +56,14 @@
       <h2 class="text-3xl mb-4 font-bold tracking-wider">{name}</h2>
       <p class="text-xl mb-4">{intro}</p>
     </div>
-
     <img class="mask mask-squircle h-48" src={url} alt={name} />
   </div>
 {/each}
 
+<h2 class="text-3xl mb-4 text-center font-bold tracking-wider">Check out some of my projects</h2>
+<br/>
 <div
-  class="grid gap-10 md:grid-cols-4 md:px-10 lg:grid-cols-6 lg:-mx-52"
+  class="grid gap-10 md:grid-cols-4 md:px-10 lg:grid-cols-6 lg:-mx-52 "
 >
   {#each projects as { name, slug, description, image }}
     <ProjectCard {name} {description} url={image[0].url} {slug} />

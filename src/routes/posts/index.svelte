@@ -39,10 +39,10 @@
   url={`${siteUrl}${$page.url.pathname}`}
 />
 
-<h1 class="text-4xl mb-10 font-extrabold">Blog posts</h1>
+<h1 class="text-4xl mb-10 font-extrabold animate-bounce">Blog Posts</h1>
 
 {#each posts as { title, slug, content, coverImage, tags }}
-  <div class="card text-center shadow-2xl mb-20">
+  <div class="card text-center shadow-2xl mb-20 hover:scale-105 transition duration-300">
     <figure class="">
       <img
         class=""

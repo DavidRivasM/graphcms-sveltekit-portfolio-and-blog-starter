@@ -5,7 +5,7 @@
   export let description = ''
 </script>
 
-<div class="relative group card shadow-2xl col-span-2">
+<div class="relative group card shadow-2xl col-span-2 hover:scale-110 transition duration-300">
   <img src={url} alt={name} class="object-cover h-full" />
   <a href={`/projects/${slug}`}>
     <div

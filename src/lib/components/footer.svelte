@@ -2,19 +2,18 @@
   import {
     authorsStore,
     fetchAuthors,
-    fetchSocials,
-    socialsStore,
+    
   } from '$stores/site-metadata'
-  import FacebookIcon from './facebook-icon.svelte'
-  import TwitterIcon from './twitter-icon.svelte'
-  import YouTubeIcon from './you-tube-icon.svelte'
+  import LinkedinIcon from './linkedin-icon.svelte'
+  import GmailIcon from './gmail-icon.svelte'
+  import WhatsappIcon from './whatsapp-icon.svelte'
+  import GithubIcon from './github-icon.svelte'
+
 
   fetchAuthors()
-  fetchSocials()
 </script>
 
 <script>
-  const { twitterUrl, youTubeUrl, facebookUrl } = $socialsStore
   const { name: AuthorName } = $authorsStore
 </script>
 
@@ -28,14 +27,17 @@
   </div>
   <div>
     <div class="grid grid-flow-col gap-4">
-      <a href={twitterUrl}>
-        <TwitterIcon />
+      <a class="hover:scale-110 transition duration-300" href="mailto:alonsorivasmora@gmail.com" target="_blank" rel="noreferrer noopener">
+        <GmailIcon />
       </a>
-      <a href={youTubeUrl}>
-        <YouTubeIcon />
+      <a class="hover:scale-110 transition duration-300" href="https://wa.me/50685255893?text=¡Hi%20David!%20I%20saw%20your%20online%20Portfolio.%20" target="_blank" rel="noreferrer noopener">
+        <WhatsappIcon />
       </a>
-      <a href={facebookUrl}>
-        <FacebookIcon />
+      <a class="hover:scale-110 transition duration-300" href="https://www.linkedin.com/in/david-alonso-rivas-mora-24b606170/" target="_blank" rel="noreferrer noopener">
+        <LinkedinIcon />
+      </a>
+      <a class="hover:scale-110 transition duration-300" href="https://github.com/DavidRivasM" target="_blank" rel="noreferrer noopener">
+        <GithubIcon />
       </a>
     </div>
   </div>

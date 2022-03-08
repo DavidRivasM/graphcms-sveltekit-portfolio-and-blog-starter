@@ -46,7 +46,7 @@
   url={`${siteUrl}${$page.url.pathname}`}
 />
 
-<h1 class="font-bold text-center mb-20 text-5xl">About Me</h1>
+<h1 class="font-bold text-center mb-20 text-5xl animate-bounce">About Me</h1>
 
 <div class="flex mb-40 items-end">
   <div class="mr-6">
